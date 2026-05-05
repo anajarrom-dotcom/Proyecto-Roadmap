@@ -4,6 +4,9 @@ import Principal.SemanaUnoYDos.ClasesYObjetos;
 import Principal.SemanaUnoYDos.Ejercicio2Encapsulacion;
 import Principal.SemanaUnoYDos.Empleado;
 import Principal.SemanaUnoYDos.Encapsulacion;
+import PrincipalSemanaCinco.AhorroCorriente;
+import PrincipalSemanaCinco.AhorroSeguro;
+import PrincipalSemanaCinco.RegistroEstudiante;
 import PrincipalSemanaCuatro.EjemploPolimorfismo;
 import PrincipalSemanaTres.Herencia;
 import PrincipalSemanaTres.Sobreescritura;
@@ -11,6 +14,10 @@ import PrincipalSemanaCuatro.Polimorfismo;
 import PrincipalSemanaCuatro.PolimorfismoHerencia;
 import PrincipalSemanaCuatro.Persona;
 import java.util.Scanner;
+
+
+
+
 public class Main {
 	public static void main (String[]args) {
 		Scanner sc = new Scanner(System.in);
@@ -19,7 +26,7 @@ public class Main {
 		System.out.println("1.Semana Uno Y Dos");
 		System.out.println("2.Semana Tres");
 		System.out.println("3.Semana Cuatro");
-		
+		System.out.println("4.Semana Cinco");
 		int opcion = sc.nextInt();
 		switch(opcion) {
 		case 1:
@@ -31,7 +38,9 @@ public class Main {
 		case 3:
 			semanaCuatro();
 			break;
-			
+		case 4:
+			semanaCinco();
+			break;
 		}
 		
 	}
@@ -78,4 +87,26 @@ public class Main {
 		System.out.println(persona.mostrar());
 	}
 	
+	public static void semanaCinco() {
+		
+		System.out.println("      ");
+		System.out.println("---------------------semana Cinco--------------------------");
+		
+		RegistroEstudiante rg = new RegistroEstudiante();
+	       rg.registrar("Antony");
+	       rg.registrar("Antony", "19500");
+	       rg.registrar("Antony", "19500", "Sistemas");
+	       
+	       System.out.println("---------------------Ejemplo 1--------------------------");
+	       
+	       AhorroCorriente ac = new AhorroCorriente(2700);
+	        System.out.println("1-Saldo: " + ac.getSaldo());
+	        ac.deposito(500);
+	        System.out.println("2-Saldo: " + ac.getSaldo());
+	        System.out.println("########################");
+	        AhorroSeguro as = new AhorroSeguro(2700);
+	        System.out.println("1-Saldo: " + as.getSaldo());
+	        as.deposito(500);
+	        System.out.println("2-Saldo: " + as.getSaldo());
+	}
 }
